@@ -1,5 +1,6 @@
 package com.kremek;
 
+import com.badlogic.gdx.Application;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
@@ -12,8 +13,9 @@ import com.badlogic.gdx.maps.tiled.renderers.OrthoCachedTiledMapRenderer;
 import com.badlogic.gdx.utils.viewport.FillViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 
-public class KremekGame extends ApplicationAdapter {
 
+
+public class KremekGame extends ApplicationAdapter {
 
 	SpriteBatch batch;
 	Texture img;
@@ -37,6 +39,10 @@ public class KremekGame extends ApplicationAdapter {
 
 		int width = Gdx.graphics.getWidth(); // Can change to other
 		int height = Gdx.graphics.getHeight();
+
+		Gdx.app.setLogLevel(Application.LOG_DEBUG);
+		Gdx.app.log("Res: ",  width + "x" + height);
+
 
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, width, height);
